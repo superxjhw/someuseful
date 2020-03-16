@@ -44,7 +44,9 @@ static NSString *const reuseIdentifier = @"subCell";
             self.outCanScrollBlock(YES);
         }
     }else {
-        self.outCanScrollBlock(NO);
+        if (self.outCanScrollBlock) {
+            self.outCanScrollBlock(NO);
+        }
         if (!self.canScroll) {
             scrollView.contentOffset = CGPointZero;
         }
